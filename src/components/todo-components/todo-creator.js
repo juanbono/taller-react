@@ -2,6 +2,10 @@
 
 import React, { Component } from 'react';
 
+type TodoCreatorProps = {
+    createTodo: Function
+}
+
 export default class TodoCreator extends Component {
     state: {
         todo: string
@@ -9,9 +13,9 @@ export default class TodoCreator extends Component {
 
     clickHandler: Function;
     textHandler: Function;
-    createTodo: any;
+    createTodo: Function;
 
-    constructor(props: any) {
+    constructor(props: TodoCreatorProps) {
         super(props);
         this.clickHandler = this.clickHandler.bind(this)
         this.createTodo = this.props.createTodo;
@@ -22,10 +26,12 @@ export default class TodoCreator extends Component {
         this.createTodo(this.state.todo);
     }
 
-    textHandler(event: any) {
-        this.setState({
-            todo: event.target.value
-        })
+    textHandler(event: Event) {
+        if (event.target instanceof HTMLInputElement) {
+            this.setState({
+                todo: event.target.value
+            })
+        }
     }
 
     render() {
