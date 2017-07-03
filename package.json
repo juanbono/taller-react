@@ -1,0 +1,34 @@
+{
+  "name": "taller-react",
+  "version": "1.0.0",
+  "description": "taller de React dado por Medallia @ FRBA",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run clean && webpack",
+    "prepublish": "npm run build",
+    "clean": "rm -rf dist",
+    "flow": "flow",
+    "watch": "npm run clean && webpack --watch",
+    "start": "webpack-dev-server"
+  },
+  "author": "juan bono",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "webpack": "^3.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-flow": "^6.23.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-react-hmre": "^1.1.1",
+    "flow-bin": "^0.49.1",
+    "uuid": "^3.1.0",
+    "webpack-dev-server": "^2.5.0"
+  }
+}
